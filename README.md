@@ -1,2 +1,3 @@
 # muscularsoulgym-web
-Muscularsoul is a gym portfolio website designed using html, css, javascript, and python.
+Muscularsoul is a gym portfolio website. 
+It is designed using html, css, python and js.

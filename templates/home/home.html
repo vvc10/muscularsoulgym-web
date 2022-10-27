@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+{% block body %}
+<style type="text/css">
+  .carousel-inner {
+    background-color: aqua;
+    height: 800px;
+    width: 100%;
+    margin-top: -100px;
+    z-index: -1;
+    font-family: "Poppins", Arial, sans-serif;
+  }
+
+  .carousel-item {
+    height: 100%;
+  }
+
+  .carousel-inner>.carousel-item img {
+    height: 100%;
+  }
+
+  .carousel-caption {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    left: 130px;
+    top: 250px;
+    z-index: 100;
+    text-align: left;
+  }
+
+  .btn-explore {
+    flex: 1 1 auto;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(255, 255, 255);
+    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    /* box-shadow: 0 0 20px #eee; */
+    border-radius: 2px;
+background-color: orangered;    width: 80px;
+    height: 40px;
+
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+
+  /* Demo Stuff End -> */
+
+  /* <- Magic Stuff Start */
+
+  .btn-explore:hover {
+    /* background-position: right center; */
+    /* change the direction of the change here */
+  }
+
+  .divsec {
+    height: 500px;
+    width: 100%;
+    background-color: black;
+    padding: 40px 40px;
+    text-align: center;
+
+  }
+
+  .divsec>.divsec_head {
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    color: orangered ;
+
+  }
+
+  .divsec>.divsec_afterhead {
+    display: flex;
+    padding-top: 20px;
+  }
+
+  .divsec_fr {
+    height: 280px;
+    width: 230px;
+    background-color: tr;
+    border: 1px solid transparent;
+    padding: 5px 20px;
+    margin: 0px 25px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+  }
+
+  .divsec_fr_descrip {
+    color: white;
+    width: 200px;
+    font-size: 14px;
+    text-align: left;
+    /* position: relative; */
+    padding-top: 20px;
+
+
+  }
+
+  .divsec_fr_img {
+    background-color: transparent;
+    height: 80px;
+    width: 180px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+  }
+
+  .divsec_fr_imgarea {
+    background-color: rgb(38, 38, 38);
+    padding: 15px;
+    border-radius: 35px;
+    height: 75px;
+    width: 75px;
+  }
+
+  .divsec_fr_img>.divsecimg_imgname {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 17px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+    margin-left: -10px;
+    margin-top: 10px;
+
+  }
+
+  .divsec_fr:hover~.divsec_fr_imgarea {
+    color: #fff;
+    background-color: #000;
+  }
+</style>
+
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      {% load static %}
+      <img src="{% static 'img/pic44.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <p style="font-size: 14px; font-weight: 700; color:orangered ;">SHAPE YOUR BODY</p>
+        <h2 style="font-size: 45px; font-weight: 800; margin-top: -15px;">BE STRONG</h2>
+        <h2 style="font-size: 45px; font-weight: 800">TRAINING HARD</h2>
+        <!-- <p style="font-size: 15px; padding-top: 20px; font-weight: 500; color:rgb(255, 255, 255) ;">To get full training and scheduled guidance..</p> -->
+
+        <!-- <button class="btn btn-danger">Join</button> -->
+        <button class="btn btn-explore btn-sm">Explore</button>
+      </div>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="divsec">
+  <span class="divsec_head"> Why choose us?</span>
+  <div class="divsec_afterhead">
+    <div class="divsec_fr" onmouseover="bgchange()" onmouseout="bgchangego()">
+
+      <div class="divsec_fr_img">
+        <div class="divsec_fr_imgarea" id="bgchange">
+          <img src="{% static 'img/dumbbell.png' %}" style="height: 40px; margin-left: -5px;">
+        </div>
+        <p class="divsecimg_imgname"> Modern <br> Equipments</p>
+      </div>
+      <p class="divsec_fr_descrip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+      </p>
+
+    </div>
+
+    <div class="divsec_fr" onmouseover="bgchangetwo()" onmouseout="bgchangegotwo()">
+      <div class="divsec_fr_img">
+        <div class="divsec_fr_imgarea" id="bgchangetwo">
+          <img src="{% static 'img/diet.png' %}" style="height: 40px; width: 40px; margin-left: -5px;">
+        </div>
+        <p class="divsecimg_imgname">Healthy <br> Nutrition plan</p>
+      </div>
+      <p class="divsec_fr_descrip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+      </p>
+
+    </div>
+    <div class="divsec_fr" onmouseover="bgchangethree()" onmouseout="bgchangegothree()">
+      <div class="divsec_fr_img">
+        <div class="divsec_fr_imgarea" id="bgchangethree">
+          <img src="{% static 'img/trainer.png' %}" style="height: 40px; margin-left: -5px;">
+        </div>
+        <p class="divsecimg_imgname"> Proffessional
+          <br> Training plans
+        </p>
+      </div>
+      <p class="divsec_fr_descrip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+      </p>
+
+    </div>
+    <div class="divsec_fr" onmouseover="bgchangefour()" onmouseout="bgchangegofour()">
+      <div class="divsec_fr_img">
+        <div class="divsec_fr_imgarea" id="bgchangefour">
+          <img src="{% static 'img/happy.png' %}" style="height: 40px; margin-left: -5px;">
+        </div>
+        <p class="divsecimg_imgname"> Happy
+          <br> Environment
+        </p>
+      </div>
+      <p class="divsec_fr_descrip">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut dolore facilisis.
+      </p>
+
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  function bgchange() {
+    document.getElementById("bgchange").style.backgroundColor = 'orangeRed';
+  }
+  function bgchangego() {
+    document.getElementById("bgchange").style.backgroundColor = 'rgb(38, 38, 38)';
+
+  }
+  function bgchangetwo() {
+    document.getElementById("bgchangetwo").style.backgroundColor = 'orangeRed';
+  }
+  function bgchangegotwo() {
+    document.getElementById("bgchangetwo").style.backgroundColor = 'rgb(38, 38, 38)';
+
+  }
+  function bgchangethree() {
+    document.getElementById("bgchangethree").style.backgroundColor = 'orangeRed';
+  }
+  function bgchangegothree() {
+    document.getElementById("bgchangethree").style.backgroundColor = 'rgb(38, 38, 38)';
+
+  }
+  function bgchangefour() {
+    document.getElementById("bgchangefour").style.backgroundColor = 'orangeRed';
+  }
+  function bgchangegofour() {
+    document.getElementById("bgchangefour").style.backgroundColor = 'rgb(38, 38, 38)';
+
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,373 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{ % static 'css/style.css' % }">
+  <title>{% block title %} {% endblock title %}</title>
+
+  <style>
+    .top-nav {
+      background-color: transparent;
+      /* position: fixed; */
+      width: 100%;
+      height: 40px;
+      z-index: 1;
+      display: flex;
+      padding-top: 5px
+    }
+
+    .topnav_l {
+      width: 50%;
+      background-color: transparent;
+      padding: 8px 20px;
+      color: white;
+      align-items: left;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .topnav_l>span {
+      color: rgb(179, 179, 179);
+    }
+
+    .topnav_r {
+      width: 50%;
+      background-color: transparent;
+      padding: 8px 20px;
+      color: white;
+      align-items: right;
+      text-align: right;
+    }
+
+    .topnav_r>span {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      padding: 4px 10px;
+      cursor: pointer;
+    }
+
+    .topnav_r>.topnav_r_telegram {
+      padding-top: 5px 9px;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    .navbar-brand:hover {
+      color: white;
+    }
+
+    .navbar {
+      background-color: transparent;
+      /* position: fixed; */
+      width: 100%;
+      z-index: 1000;
+      /* margin-top: 40px; */
+
+    }
+
+    .nav-link:hover {
+      color: white;
+    }
+
+    .nav-link {
+      list-style: none;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+    }
+
+    .nav-link:active {
+      color: rgb(67, 67, 67);
+    }
+
+    .btnsearch {
+      color: white;
+      font-size: 14px;
+      padding: 0px 10px;
+      cursor: pointer;
+    }
+
+    .search_model {
+      z-index: 4000;
+      display: none;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      background-color: rgb(0, 0, 0, 0.8);
+      align-items: center;
+      text-align: center;
+      padding: 100px 0px;
+      /* overflow: hidden; */
+    }
+    
+    #query {
+      background-color: transparent;
+      height: 55px;
+      width: 500px;
+      border: 0.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px 0px 0px 5px;
+      color: white;
+      padding-left: 20px;
+      font-size: 22px;
+      outline: none;
+      /* display: none; */
+    }
+
+    .inbtnsearch{
+      background-color: rgb(207, 135, 1);
+      height:55px;
+      width: 55px;
+      position: absolute;
+      font-size: 22px;
+      color: rgb(255, 255, 255);
+      border-radius: 0px 5px 5px 0px;
+    }
+    .btnclosesearch{
+      background-color: transparent;
+      height:20px;
+      width: 20px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 22px;
+      color: rgb(241, 241, 241);
+      cursor: pointer;
+      /* border-radius: 0px 5px 5px 0px; */
+    }
+    .btnclosesearch:hover{
+      color: rgb(208, 208, 208);
+
+    }
+    .logouticon{
+      padding-top: 8px;
+      color: white;
+      font-size: 14px;
+    }
+    .logouticon:hover{
+      color: orange;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-nav">
+    <div class="topnav_l">
+      <span>Phone no :</span> +00 1234 567 <span>or email us:</span> emailsample@email.com
+    </div>
+    <div class=" topnav_r">
+      <span class="topnav_r_facebook"><i class="fa fa-facebook" style="font-size:14px"></i></span>
+      <span class="topnav_r_telegram"><i class="fa fa-telegram" style="font-size:13px"></i></span>
+      <span class="topnav_r_instagram"><i class="fa fa-instagram" style="font-size:13px"></i></span>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand" href="/">muscularsoul</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% block homeactive %}  {% endblock homeactive %}">
+          <a class="nav-link nav-link-home" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item {% block blogactive %}  {% endblock blogactive %} ">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+        <li class="nav-item {% block blogactiv %}  {% endblock blogactiv %} ">
+          <a class="nav-link" href="/blog">Programs</a>
+        </li>
+        <li class="nav-item {% block aboutactive %}  {% endblock aboutactive %}">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item {% block contactactive %}  {% endblock contactactive %} ">
+          <a class="nav-link" href="/contact">Contact us</a>
+        </li>
+
+      </ul>
+      <div class="ml-auto form-inline ">
+
+        <span class="btnsearch" onclick="handlesearchmodel()"><i class="fa fa-search" aria-hidden="true"></i></span>
+
+   
+      
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav mr-2">
+          <li class="nav-item" style="display: flex;">
+            <a class="nav-link" href='#' role="button" >
+              Hello, {{request.user}} <a class="logouticon"  href='/logout'> <i class="fa fa-power-off"></i></a></a>
+            
+          </li>
+        </ul>
+      </div>
+      {% else %}
+      <!-- Button to  trigger Login modal -->
+      <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#loginModal">
+        Login
+      </button>
+
+      <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#signupModal">
+        SignUp
+      </button>
+      {% endif %}
+
+
+    </div>
+  </nav>
+  <div class="search_model" id="search_model">
+      <span class="btnclosesearch" onclick="handleclosesearchmodel()"><i class="fa fa-times" aria-hidden="true"></i></span>
+      <span style="font-size: 18px;
+       color: white; 
+       font-weight: 400; 
+       position: absolute; 
+       top: 90px;
+       left: 360px;
+       ">
+       Search:</span><br>
+
+    <form method="get" action="/search" class="my-2 my-lg-0 mx-3">
+      <input class="mr-sm-0" type="search" placeholder="Type and hit enter.." aria-label="Search" name="query" id="query">
+      <button class="btn inbtnsearch my-0 my-sm-0 " onclick="handleonclick()" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      <!-- <a href="/admin" role="button" target="_blank" class="btn btn-outline-success m-2 my-sm-0"> Admin Panel </a> -->
+    </form>
+  </div>
+
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message : </strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+
+
+  <!-- SignUp Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModalTitle">SignUp Here</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/signup" method='post'>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username"
+                placeholder="Choose a unique username" required>
+            </div>
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Your First Name"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="pass1">Choose a password</label>
+              <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose Your Password"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="pass2">Confirm Password</label>
+              <input type="password" class="form-control" id="pass2" name="pass2"
+                placeholder="Enter your password again" required>
+            </div>
+
+
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% block body %} {% endblock body %}
+  {% block js %}
+  {% endblock js %}
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalTitle">Login Here</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/login" method="POST"> {% csrf_token %}
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="loginusername" name="loginusername"
+                placeholder="Enter your username " required>
+            </div>
+            <div class="form-group">
+              <label for="pass">Enter your password </label>
+              <input type="password" class="form-control" id="loginpassword" name="loginpassword"
+                placeholder="Enter your password " required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+          integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+          integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+          crossorigin="anonymous"></script>
+        <script>
+          function handleonclick() {
+            document.getElementById("query").style.display = 'block';
+          }
+          function handlesearchmodel() {
+            document.getElementById("search_model").style.display = 'block';
+          }
+          function handleclosesearchmodel() {
+            document.getElementById("search_model").style.display = 'none';
+          }
+        </script>
+</body>
+
+</html>

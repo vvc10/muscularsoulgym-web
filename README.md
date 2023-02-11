@@ -15,7 +15,6 @@ It is designed using html, css, python and js.
 <span>&#128073;</span>Upcoming features:
 
 <ol start="8">
-
     <li>Live classes on site.</li>
     <li>E-commerce.</li>
     <li>Transaction portal.</li>
